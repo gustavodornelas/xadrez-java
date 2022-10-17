@@ -65,266 +65,266 @@ public class Application extends javax.swing.JFrame {
 
         //Coluna A
         if (possibleMoves[0][0]) {
-            botaoA8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][0]) {
-            botaoA7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][0]) {
-            botaoA6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][0]) {
-            botaoA5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][0]) {
-            botaoA4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][0]) {
-            botaoA3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][0]) {
-            botaoA2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][0]) {
-            botaoA1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoA1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna B
         if (possibleMoves[0][1]) {
-            botaoB8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][1]) {
-            botaoB7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][1]) {
-            botaoB6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][1]) {
-            botaoB5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][1]) {
-            botaoB4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][1]) {
-            botaoB3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][1]) {
-            botaoB2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][1]) {
-            botaoB1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoB1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna C
         if (possibleMoves[0][2]) {
-            botaoC8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][2]) {
-            botaoC7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][2]) {
-            botaoC6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][2]) {
-            botaoC5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][2]) {
-            botaoC4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][2]) {
-            botaoC3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][2]) {
-            botaoC2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][2]) {
-            botaoC1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoC1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna D
         if (possibleMoves[0][3]) {
-            botaoD8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][3]) {
-            botaoD7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][3]) {
-            botaoD6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][3]) {
-            botaoD5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][3]) {
-            botaoD4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][3]) {
-            botaoD3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][3]) {
-            botaoD2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][3]) {
-            botaoD1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoD1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna E
         if (possibleMoves[0][4]) {
-            botaoE8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][4]) {
-            botaoE7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][4]) {
-            botaoE6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][4]) {
-            botaoE5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][4]) {
-            botaoE4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][4]) {
-            botaoE3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][4]) {
-            botaoE2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][4]) {
-            botaoE1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoE1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna F
         if (possibleMoves[0][5]) {
-            botaoF8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][5]) {
-            botaoF7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][5]) {
-            botaoF6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][5]) {
-            botaoF5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][5]) {
-            botaoF4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][5]) {
-            botaoF3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][5]) {
-            botaoF2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][5]) {
-            botaoF1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoF1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna G
         if (possibleMoves[0][6]) {
-            botaoG8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][6]) {
-            botaoG7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][6]) {
-            botaoG6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][6]) {
-            botaoG5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][6]) {
-            botaoG4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][6]) {
-            botaoG3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][6]) {
-            botaoG2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][6]) {
-            botaoG1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoG1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         //Coluna H
         if (possibleMoves[0][7]) {
-            botaoH8.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[1][7]) {
-            botaoH7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[2][7]) {
-            botaoH6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[3][7]) {
-            botaoH5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[4][7]) {
-            botaoH4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[5][7]) {
-            botaoH3.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[6][7]) {
-            botaoH2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
 
         if (possibleMoves[7][7]) {
-            botaoH1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+            botaoH1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
         }
     }
 
@@ -658,9 +658,10 @@ public class Application extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon("imagem.png").getImage());
-        setMaximumSize(new java.awt.Dimension(771, 771));
-        setMinimumSize(new java.awt.Dimension(771, 771));
-        setPreferredSize(new java.awt.Dimension(771, 771));
+        setMaximumSize(new java.awt.Dimension(800, 800));
+        setMinimumSize(new java.awt.Dimension(800, 800));
+        setPreferredSize(new java.awt.Dimension(800, 800));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         painelTabuleiro.setOpaque(false);
@@ -669,55 +670,64 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(jLabel2);
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("A");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel3);
 
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("B");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel4);
 
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("C");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel5);
 
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("D");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel6);
 
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("E");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel7);
 
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("F");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel8);
 
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("G");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel9);
 
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("H");
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         painelTabuleiro.add(jLabel10);
 
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("8");
         painelTabuleiro.add(jLabel11);
@@ -790,7 +800,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH8);
 
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("7");
         painelTabuleiro.add(jLabel12);
@@ -863,7 +874,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH7);
 
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("6");
         painelTabuleiro.add(jLabel13);
@@ -928,7 +940,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH6);
 
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("5");
         painelTabuleiro.add(jLabel14);
@@ -993,7 +1006,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH5);
 
-        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("4");
         painelTabuleiro.add(jLabel15);
@@ -1058,7 +1072,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH4);
 
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("3");
         painelTabuleiro.add(jLabel16);
@@ -1123,7 +1138,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH3);
 
-        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel17.setText("2");
         painelTabuleiro.add(jLabel17);
@@ -1196,7 +1212,8 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoH2);
 
-        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel18.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel18.setText("1");
         painelTabuleiro.add(jLabel18);
@@ -1272,7 +1289,7 @@ public class Application extends javax.swing.JFrame {
         getContentPane().add(painelTabuleiro);
         painelTabuleiro.setBounds(5, 5, 700, 700);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/background.jpeg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 800, 810);
 
