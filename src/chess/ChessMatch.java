@@ -62,6 +62,10 @@ public class ChessMatch {
         return promoted;
     }
 
+    public Board getBoard() {
+        return board;
+    }
+    
     // Methods
     public ChessPiece[][] getPieces() {
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];

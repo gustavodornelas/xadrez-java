@@ -54,281 +54,436 @@ public class Application extends javax.swing.JFrame {
         initComponents();
         chessMatch = new ChessMatch();
         captured = new ArrayList<>();
+        atualizarTabuleiro();
     }
 
-    private void moverIcone(JButton origem, JButton destino) {
-        destino.setIcon(origem.getIcon());
-        origem.setIcon(null);
+    private ImageIcon getIconePeca(int a, int b) {
+
+        ChessPiece pecas[][] = chessMatch.getPieces();
+        String peca = "" + pecas[a][b];
+
+        if (pecas[a][b] != null) {
+            if (pecas[a][b].getColor() == chess.Color.BLACK) {
+
+                if (peca.equals("R")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-rook.png"));
+                }
+
+                if (peca.equals("N")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-knight.png"));
+                }
+
+                if (peca.equals("B")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-bishop.png"));
+                }
+
+                if (peca.equals("K")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-king.png"));
+                }
+
+                if (peca.equals("Q")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-queen.png"));
+                }
+
+                if (peca.equals("P")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"));
+                }
+
+            } else if (pecas[a][b].getColor() == chess.Color.WHITE) {
+
+                if (peca.equals("R")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-rook.png"));
+                }
+
+                if (peca.equals("N")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-knight.png"));
+                }
+
+                if (peca.equals("B")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-bishop.png"));
+                }
+
+                if (peca.equals("K")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-king.png"));
+                }
+
+                if (peca.equals("Q")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-queen.png"));
+                }
+
+                if (peca.equals("P")) {
+                    return new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"));
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private void atualizarTabuleiro() {
+
+        if (chessMatch.getTurn() % 2 == 0) {
+            textoTurno.setText("TURNO DAS PEÇAS PRETAS");
+        } else {
+            textoTurno.setText("TURNO DAS PEÇAS BRANCAS");
+        }
+
+        if (chessMatch.getCheck()) {
+            textoTurno.setText(textoTurno.getText() + " - CHECK!");
+        }
+
+        //Coluna A
+        botaoA8.setIcon(getIconePeca(0, 0));
+        botaoA7.setIcon(getIconePeca(1, 0));
+        botaoA6.setIcon(getIconePeca(2, 0));
+        botaoA5.setIcon(getIconePeca(3, 0));
+        botaoA4.setIcon(getIconePeca(4, 0));
+        botaoA3.setIcon(getIconePeca(5, 0));
+        botaoA2.setIcon(getIconePeca(6, 0));
+        botaoA1.setIcon(getIconePeca(7, 0));
+
+        //Coluna b
+        botaoB8.setIcon(getIconePeca(0, 1));
+        botaoB7.setIcon(getIconePeca(1, 1));
+        botaoB6.setIcon(getIconePeca(2, 1));
+        botaoB5.setIcon(getIconePeca(3, 1));
+        botaoB4.setIcon(getIconePeca(4, 1));
+        botaoB3.setIcon(getIconePeca(5, 1));
+        botaoB2.setIcon(getIconePeca(6, 1));
+        botaoB1.setIcon(getIconePeca(7, 1));
+
+        //Coluna b
+        botaoC8.setIcon(getIconePeca(0, 2));
+        botaoC7.setIcon(getIconePeca(1, 2));
+        botaoC6.setIcon(getIconePeca(2, 2));
+        botaoC5.setIcon(getIconePeca(3, 2));
+        botaoC4.setIcon(getIconePeca(4, 2));
+        botaoC3.setIcon(getIconePeca(5, 2));
+        botaoC2.setIcon(getIconePeca(6, 2));
+        botaoC1.setIcon(getIconePeca(7, 2));
+
+        //Coluna c
+        botaoD8.setIcon(getIconePeca(0, 3));
+        botaoD7.setIcon(getIconePeca(1, 3));
+        botaoD6.setIcon(getIconePeca(2, 3));
+        botaoD5.setIcon(getIconePeca(3, 3));
+        botaoD4.setIcon(getIconePeca(4, 3));
+        botaoD3.setIcon(getIconePeca(5, 3));
+        botaoD2.setIcon(getIconePeca(6, 3));
+        botaoD1.setIcon(getIconePeca(7, 3));
+
+        //Coluna b
+        botaoE8.setIcon(getIconePeca(0, 4));
+        botaoE7.setIcon(getIconePeca(1, 4));
+        botaoE6.setIcon(getIconePeca(2, 4));
+        botaoE5.setIcon(getIconePeca(3, 4));
+        botaoE4.setIcon(getIconePeca(4, 4));
+        botaoE3.setIcon(getIconePeca(5, 4));
+        botaoE2.setIcon(getIconePeca(6, 4));
+        botaoE1.setIcon(getIconePeca(7, 4));
+
+        //Coluna b
+        botaoF8.setIcon(getIconePeca(0, 5));
+        botaoF7.setIcon(getIconePeca(1, 5));
+        botaoF6.setIcon(getIconePeca(2, 5));
+        botaoF5.setIcon(getIconePeca(3, 5));
+        botaoF4.setIcon(getIconePeca(4, 5));
+        botaoF3.setIcon(getIconePeca(5, 5));
+        botaoF2.setIcon(getIconePeca(6, 5));
+        botaoF1.setIcon(getIconePeca(7, 5));
+
+        //Coluna b
+        botaoG8.setIcon(getIconePeca(0, 6));
+        botaoG7.setIcon(getIconePeca(1, 6));
+        botaoG6.setIcon(getIconePeca(2, 6));
+        botaoG5.setIcon(getIconePeca(3, 6));
+        botaoG4.setIcon(getIconePeca(4, 6));
+        botaoG3.setIcon(getIconePeca(5, 6));
+        botaoG2.setIcon(getIconePeca(6, 6));
+        botaoG1.setIcon(getIconePeca(7, 6));
+
+        //Coluna b
+        botaoH8.setIcon(getIconePeca(0, 7));
+        botaoH7.setIcon(getIconePeca(1, 7));
+        botaoH6.setIcon(getIconePeca(2, 7));
+        botaoH5.setIcon(getIconePeca(3, 7));
+        botaoH4.setIcon(getIconePeca(4, 7));
+        botaoH3.setIcon(getIconePeca(5, 7));
+        botaoH2.setIcon(getIconePeca(6, 7));
+        botaoH1.setIcon(getIconePeca(7, 7));
     }
 
     private void mostrarPossiveisMovimentos() {
 
-        //Coluna A
-        if (possibleMoves[0][0]) {
-            botaoA8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+        if (checkBoxPossiveisMovimentos.isSelected()) {
 
-        if (possibleMoves[1][0]) {
-            botaoA7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna A
+            if (possibleMoves[0][0]) {
+                botaoA8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][0]) {
-            botaoA6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][0]) {
+                botaoA7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][0]) {
-            botaoA5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][0]) {
+                botaoA6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][0]) {
-            botaoA4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][0]) {
+                botaoA5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][0]) {
-            botaoA3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][0]) {
+                botaoA4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][0]) {
-            botaoA2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][0]) {
+                botaoA3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][0]) {
-            botaoA1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][0]) {
+                botaoA2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna B
-        if (possibleMoves[0][1]) {
-            botaoB8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][0]) {
+                botaoA1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][1]) {
-            botaoB7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna B
+            if (possibleMoves[0][1]) {
+                botaoB8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][1]) {
-            botaoB6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][1]) {
+                botaoB7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][1]) {
-            botaoB5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][1]) {
+                botaoB6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][1]) {
-            botaoB4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][1]) {
+                botaoB5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][1]) {
-            botaoB3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][1]) {
+                botaoB4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][1]) {
-            botaoB2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][1]) {
+                botaoB3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][1]) {
-            botaoB1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][1]) {
+                botaoB2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna C
-        if (possibleMoves[0][2]) {
-            botaoC8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][1]) {
+                botaoB1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][2]) {
-            botaoC7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna C
+            if (possibleMoves[0][2]) {
+                botaoC8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][2]) {
-            botaoC6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][2]) {
+                botaoC7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][2]) {
-            botaoC5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][2]) {
+                botaoC6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][2]) {
-            botaoC4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][2]) {
+                botaoC5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][2]) {
-            botaoC3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][2]) {
+                botaoC4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][2]) {
-            botaoC2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][2]) {
+                botaoC3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][2]) {
-            botaoC1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][2]) {
+                botaoC2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna D
-        if (possibleMoves[0][3]) {
-            botaoD8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][2]) {
+                botaoC1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][3]) {
-            botaoD7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna D
+            if (possibleMoves[0][3]) {
+                botaoD8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][3]) {
-            botaoD6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][3]) {
+                botaoD7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][3]) {
-            botaoD5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][3]) {
+                botaoD6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][3]) {
-            botaoD4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][3]) {
+                botaoD5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][3]) {
-            botaoD3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][3]) {
+                botaoD4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][3]) {
-            botaoD2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][3]) {
+                botaoD3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][3]) {
-            botaoD1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][3]) {
+                botaoD2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna E
-        if (possibleMoves[0][4]) {
-            botaoE8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][3]) {
+                botaoD1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][4]) {
-            botaoE7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna E
+            if (possibleMoves[0][4]) {
+                botaoE8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][4]) {
-            botaoE6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][4]) {
+                botaoE7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][4]) {
-            botaoE5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][4]) {
+                botaoE6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][4]) {
-            botaoE4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][4]) {
+                botaoE5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][4]) {
-            botaoE3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][4]) {
+                botaoE4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][4]) {
-            botaoE2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][4]) {
+                botaoE3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][4]) {
-            botaoE1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][4]) {
+                botaoE2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna F
-        if (possibleMoves[0][5]) {
-            botaoF8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][4]) {
+                botaoE1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][5]) {
-            botaoF7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna F
+            if (possibleMoves[0][5]) {
+                botaoF8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][5]) {
-            botaoF6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][5]) {
+                botaoF7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][5]) {
-            botaoF5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][5]) {
+                botaoF6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][5]) {
-            botaoF4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][5]) {
+                botaoF5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][5]) {
-            botaoF3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][5]) {
+                botaoF4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][5]) {
-            botaoF2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][5]) {
+                botaoF3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][5]) {
-            botaoF1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][5]) {
+                botaoF2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna G
-        if (possibleMoves[0][6]) {
-            botaoG8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][5]) {
+                botaoF1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][6]) {
-            botaoG7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna G
+            if (possibleMoves[0][6]) {
+                botaoG8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][6]) {
-            botaoG6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][6]) {
+                botaoG7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][6]) {
-            botaoG5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][6]) {
+                botaoG6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][6]) {
-            botaoG4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][6]) {
+                botaoG5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][6]) {
-            botaoG3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][6]) {
+                botaoG4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][6]) {
-            botaoG2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][6]) {
+                botaoG3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][6]) {
-            botaoG1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[6][6]) {
+                botaoG2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        //Coluna H
-        if (possibleMoves[0][7]) {
-            botaoH8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[7][6]) {
+                botaoG1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[1][7]) {
-            botaoH7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            //Coluna H
+            if (possibleMoves[0][7]) {
+                botaoH8.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[2][7]) {
-            botaoH6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[1][7]) {
+                botaoH7.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[3][7]) {
-            botaoH5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[2][7]) {
+                botaoH6.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[4][7]) {
-            botaoH4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[3][7]) {
+                botaoH5.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[5][7]) {
-            botaoH3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[4][7]) {
+                botaoH4.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[6][7]) {
-            botaoH2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-        }
+            if (possibleMoves[5][7]) {
+                botaoH3.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
 
-        if (possibleMoves[7][7]) {
-            botaoH1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            if (possibleMoves[6][7]) {
+                botaoH2.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
+
+            if (possibleMoves[7][7]) {
+                botaoH1.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+            }
         }
     }
 
-    private void limparPossiveisMovimentos() {
+    private void limparMovimento() {
         botaoA8.setBorder(null);
         botaoA7.setBorder(null);
         botaoA6.setBorder(null);
@@ -404,10 +559,7 @@ public class Application extends javax.swing.JFrame {
                 botaoOrigem.setBorder(BorderFactory.createLineBorder(Color.CYAN));
                 possibleMoves = chessMatch.possibleMoves(origem);
 
-                if (checkBoxPossiveisMovimentos.isSelected()) {
-                    mostrarPossiveisMovimentos();
-                }
-
+                mostrarPossiveisMovimentos();
             } else {
                 destino = posicao;
                 botaoDestino = botao;
@@ -418,64 +570,51 @@ public class Application extends javax.swing.JFrame {
                     captured.add(pecaCapturada);
                 }
 
-                moverIcone(botaoOrigem, botaoDestino);
-                
-                String pecaPromocao = "";
-
                 if (chessMatch.getPromoted() != null) {
 
                     if (chessMatch.getCurrentPlayer() == chess.Color.BLACK) {
                         if (radioBispo.isSelected()) {
-                            pecaPromocao = "/gui/img/white-bishop.png";
                             promocaoSelecionada = "B";
                         }
 
                         if (radioCavalo.isSelected()) {
-                            pecaPromocao = "/gui/img/white-knight.png";
                             promocaoSelecionada = "N";
                         }
 
                         if (radioRainha.isSelected()) {
-                            pecaPromocao = "/gui/img/white-queen.png";
-                            System.out.println("OK");
                             promocaoSelecionada = "Q";
                         }
 
                         if (radioTorre.isSelected()) {
-                            pecaPromocao = "/gui/img/white-rook.png";
                             promocaoSelecionada = "R";
                         }
 
                     } else if (chessMatch.getCurrentPlayer() == chess.Color.WHITE) {
 
                         if (radioBispo.isSelected()) {
-                            pecaPromocao = "/gui/img/black-bishop.png";
                             promocaoSelecionada = "B";
                         }
 
                         if (radioCavalo.isSelected()) {
-                            pecaPromocao = "/gui/img/black-knight.png";
                             promocaoSelecionada = "N";
                         }
 
                         if (radioRainha.isSelected()) {
-                            pecaPromocao = "/gui/img/black-queen.png";
                             promocaoSelecionada = "Q";
                         }
 
                         if (radioTorre.isSelected()) {
-                            pecaPromocao = "/gui/img/black-rook.png";
                             promocaoSelecionada = "R";
                         }
                     }
-
-                    botaoDestino.setIcon(new javax.swing.ImageIcon(getClass().getResource(pecaPromocao)));
                     chessMatch.replacePromotedPiece(promocaoSelecionada);
                 } //fim da promoção
 
+                atualizarTabuleiro();
+
                 botaoOrigem.setBorder(null);
                 origem = null;
-                limparPossiveisMovimentos();
+                limparMovimento();
 
                 if (chessMatch.getCheckMate()) {
                     javax.swing.JOptionPane.showMessageDialog(rootPane, "CHECK-MATE!");
@@ -484,9 +623,37 @@ public class Application extends javax.swing.JFrame {
 
             } //fim da ação de destino
         } catch (ChessException e) {
-            javax.swing.JOptionPane.showMessageDialog(rootPane, e.getMessage());
-            botaoOrigem.setBorder(null);
-            origem = null;
+            ChessPiece pecaOrigem = (ChessPiece) chessMatch.getBoard().piece(origem.toPosition());
+            ChessPiece pecaDestino = (ChessPiece) chessMatch.getBoard().piece(destino.toPosition());
+
+            if (pecaDestino != null) {
+
+                if ((pecaOrigem.getColor() == pecaDestino.getColor())) {
+
+                    try {
+                        limparMovimento();
+                        origem = posicao;
+                        botaoOrigem = botao;
+                        botaoOrigem.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+                        possibleMoves = chessMatch.possibleMoves(origem);
+                        mostrarPossiveisMovimentos();
+                    } catch (ChessException e2) {
+                        javax.swing.JOptionPane.showMessageDialog(rootPane, e2.getMessage());
+                        limparMovimento();
+                        origem = null;
+                    }
+
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(rootPane, e.getMessage());
+                    limparMovimento();
+                    origem = null;
+                }
+
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(rootPane, e.getMessage());
+                limparMovimento();
+                origem = null;
+            }
         }
     }
 
@@ -589,6 +756,7 @@ public class Application extends javax.swing.JFrame {
         botaoF1 = new javax.swing.JButton();
         botaoG1 = new javax.swing.JButton();
         botaoH1 = new javax.swing.JButton();
+        textoTurno = new javax.swing.JTextField();
         backgroundImage = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -605,9 +773,7 @@ public class Application extends javax.swing.JFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
-        Sobre.setMaximumSize(new java.awt.Dimension(400, 200));
         Sobre.setMinimumSize(new java.awt.Dimension(400, 200));
-        Sobre.setPreferredSize(new java.awt.Dimension(400, 200));
         Sobre.setResizable(false);
 
         jLabel1.setText("Jogo desenvolvido por: Gustavo Dornelas");
@@ -658,9 +824,9 @@ public class Application extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon("imagem.png").getImage());
-        setMaximumSize(new java.awt.Dimension(800, 800));
-        setMinimumSize(new java.awt.Dimension(800, 800));
-        setPreferredSize(new java.awt.Dimension(800, 800));
+        setMaximumSize(new java.awt.Dimension(800, 820));
+        setMinimumSize(new java.awt.Dimension(800, 820));
+        setPreferredSize(new java.awt.Dimension(800, 820));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -732,7 +898,7 @@ public class Application extends javax.swing.JFrame {
         jLabel11.setText("8");
         painelTabuleiro.add(jLabel11);
 
-        botaoA8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-rook.png"))); // NOI18N
+        botaoA8.setFocusPainted(false);
         botaoA8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA8ActionPerformed(evt);
@@ -741,7 +907,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoA8);
 
         botaoB8.setBackground(new java.awt.Color(51, 51, 51));
-        botaoB8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-knight.png"))); // NOI18N
+        botaoB8.setFocusPainted(false);
         botaoB8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB8ActionPerformed(evt);
@@ -749,7 +915,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoB8);
 
-        botaoC8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-bishop.png"))); // NOI18N
+        botaoC8.setFocusPainted(false);
         botaoC8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC8ActionPerformed(evt);
@@ -758,7 +924,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoC8);
 
         botaoD8.setBackground(new java.awt.Color(51, 51, 51));
-        botaoD8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-queen.png"))); // NOI18N
+        botaoD8.setFocusPainted(false);
         botaoD8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD8ActionPerformed(evt);
@@ -766,7 +932,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoD8);
 
-        botaoE8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-king.png"))); // NOI18N
+        botaoE8.setFocusPainted(false);
         botaoE8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE8ActionPerformed(evt);
@@ -775,7 +941,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoE8);
 
         botaoF8.setBackground(new java.awt.Color(51, 51, 51));
-        botaoF8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-bishop.png"))); // NOI18N
+        botaoF8.setFocusPainted(false);
         botaoF8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF8ActionPerformed(evt);
@@ -783,7 +949,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoF8);
 
-        botaoG8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-knight.png"))); // NOI18N
+        botaoG8.setFocusPainted(false);
         botaoG8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG8ActionPerformed(evt);
@@ -792,7 +958,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoG8);
 
         botaoH8.setBackground(new java.awt.Color(51, 51, 51));
-        botaoH8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-rook.png"))); // NOI18N
+        botaoH8.setFocusPainted(false);
         botaoH8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH8ActionPerformed(evt);
@@ -807,7 +973,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(jLabel12);
 
         botaoA7.setBackground(new java.awt.Color(51, 51, 51));
-        botaoA7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoA7.setFocusPainted(false);
         botaoA7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA7ActionPerformed(evt);
@@ -815,7 +981,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoA7);
 
-        botaoB7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoB7.setFocusPainted(false);
         botaoB7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB7ActionPerformed(evt);
@@ -824,7 +990,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoB7);
 
         botaoC7.setBackground(new java.awt.Color(51, 51, 51));
-        botaoC7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoC7.setFocusPainted(false);
         botaoC7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC7ActionPerformed(evt);
@@ -832,7 +998,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoC7);
 
-        botaoD7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoD7.setFocusPainted(false);
         botaoD7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD7ActionPerformed(evt);
@@ -841,7 +1007,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoD7);
 
         botaoE7.setBackground(new java.awt.Color(51, 51, 51));
-        botaoE7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoE7.setFocusPainted(false);
         botaoE7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE7ActionPerformed(evt);
@@ -849,7 +1015,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoE7);
 
-        botaoF7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoF7.setFocusPainted(false);
         botaoF7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF7ActionPerformed(evt);
@@ -858,7 +1024,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoF7);
 
         botaoG7.setBackground(new java.awt.Color(51, 51, 51));
-        botaoG7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoG7.setFocusPainted(false);
         botaoG7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG7ActionPerformed(evt);
@@ -866,7 +1032,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoG7);
 
-        botaoH7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/black-pawn.png"))); // NOI18N
+        botaoH7.setFocusPainted(false);
         botaoH7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH7ActionPerformed(evt);
@@ -880,6 +1046,7 @@ public class Application extends javax.swing.JFrame {
         jLabel13.setText("6");
         painelTabuleiro.add(jLabel13);
 
+        botaoA6.setFocusPainted(false);
         botaoA6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA6ActionPerformed(evt);
@@ -888,6 +1055,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoA6);
 
         botaoB6.setBackground(new java.awt.Color(51, 51, 51));
+        botaoB6.setFocusPainted(false);
         botaoB6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB6ActionPerformed(evt);
@@ -895,6 +1063,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoB6);
 
+        botaoC6.setFocusPainted(false);
         botaoC6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC6ActionPerformed(evt);
@@ -903,6 +1072,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoC6);
 
         botaoD6.setBackground(new java.awt.Color(51, 51, 51));
+        botaoD6.setFocusPainted(false);
         botaoD6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD6ActionPerformed(evt);
@@ -910,6 +1080,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoD6);
 
+        botaoE6.setFocusPainted(false);
         botaoE6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE6ActionPerformed(evt);
@@ -918,6 +1089,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoE6);
 
         botaoF6.setBackground(new java.awt.Color(51, 51, 51));
+        botaoF6.setFocusPainted(false);
         botaoF6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF6ActionPerformed(evt);
@@ -925,6 +1097,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoF6);
 
+        botaoG6.setFocusPainted(false);
         botaoG6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG6ActionPerformed(evt);
@@ -933,6 +1106,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoG6);
 
         botaoH6.setBackground(new java.awt.Color(51, 51, 51));
+        botaoH6.setFocusPainted(false);
         botaoH6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH6ActionPerformed(evt);
@@ -947,6 +1121,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(jLabel14);
 
         botaoA5.setBackground(new java.awt.Color(51, 51, 51));
+        botaoA5.setFocusPainted(false);
         botaoA5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA5ActionPerformed(evt);
@@ -954,6 +1129,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoA5);
 
+        botaoB5.setFocusPainted(false);
         botaoB5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB5ActionPerformed(evt);
@@ -962,6 +1138,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoB5);
 
         botaoC5.setBackground(new java.awt.Color(51, 51, 51));
+        botaoC5.setFocusPainted(false);
         botaoC5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC5ActionPerformed(evt);
@@ -969,6 +1146,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoC5);
 
+        botaoD5.setFocusPainted(false);
         botaoD5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD5ActionPerformed(evt);
@@ -977,6 +1155,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoD5);
 
         botaoE5.setBackground(new java.awt.Color(51, 51, 51));
+        botaoE5.setFocusPainted(false);
         botaoE5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE5ActionPerformed(evt);
@@ -984,6 +1163,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoE5);
 
+        botaoF5.setFocusPainted(false);
         botaoF5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF5ActionPerformed(evt);
@@ -992,6 +1172,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoF5);
 
         botaoG5.setBackground(new java.awt.Color(51, 51, 51));
+        botaoG5.setFocusPainted(false);
         botaoG5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG5ActionPerformed(evt);
@@ -999,6 +1180,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoG5);
 
+        botaoH5.setFocusPainted(false);
         botaoH5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH5ActionPerformed(evt);
@@ -1012,6 +1194,7 @@ public class Application extends javax.swing.JFrame {
         jLabel15.setText("4");
         painelTabuleiro.add(jLabel15);
 
+        botaoA4.setFocusPainted(false);
         botaoA4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA4ActionPerformed(evt);
@@ -1020,6 +1203,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoA4);
 
         botaoB4.setBackground(new java.awt.Color(51, 51, 51));
+        botaoB4.setFocusPainted(false);
         botaoB4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB4ActionPerformed(evt);
@@ -1027,6 +1211,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoB4);
 
+        botaoC4.setFocusPainted(false);
         botaoC4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC4ActionPerformed(evt);
@@ -1035,6 +1220,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoC4);
 
         botaoD4.setBackground(new java.awt.Color(51, 51, 51));
+        botaoD4.setFocusPainted(false);
         botaoD4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD4ActionPerformed(evt);
@@ -1042,6 +1228,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoD4);
 
+        botaoE4.setFocusPainted(false);
         botaoE4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE4ActionPerformed(evt);
@@ -1050,6 +1237,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoE4);
 
         botaoF4.setBackground(new java.awt.Color(51, 51, 51));
+        botaoF4.setFocusPainted(false);
         botaoF4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF4ActionPerformed(evt);
@@ -1057,6 +1245,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoF4);
 
+        botaoG4.setFocusPainted(false);
         botaoG4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG4ActionPerformed(evt);
@@ -1065,6 +1254,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoG4);
 
         botaoH4.setBackground(new java.awt.Color(51, 51, 51));
+        botaoH4.setFocusPainted(false);
         botaoH4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH4ActionPerformed(evt);
@@ -1079,6 +1269,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(jLabel16);
 
         botaoA3.setBackground(new java.awt.Color(51, 51, 51));
+        botaoA3.setFocusPainted(false);
         botaoA3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA3ActionPerformed(evt);
@@ -1086,6 +1277,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoA3);
 
+        botaoB3.setFocusPainted(false);
         botaoB3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB3ActionPerformed(evt);
@@ -1094,6 +1286,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoB3);
 
         botaoC3.setBackground(new java.awt.Color(51, 51, 51));
+        botaoC3.setFocusPainted(false);
         botaoC3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC3ActionPerformed(evt);
@@ -1101,6 +1294,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoC3);
 
+        botaoD3.setFocusPainted(false);
         botaoD3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD3ActionPerformed(evt);
@@ -1109,6 +1303,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoD3);
 
         botaoE3.setBackground(new java.awt.Color(51, 51, 51));
+        botaoE3.setFocusPainted(false);
         botaoE3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE3ActionPerformed(evt);
@@ -1116,6 +1311,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoE3);
 
+        botaoF3.setFocusPainted(false);
         botaoF3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF3ActionPerformed(evt);
@@ -1124,6 +1320,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoF3);
 
         botaoG3.setBackground(new java.awt.Color(51, 51, 51));
+        botaoG3.setFocusPainted(false);
         botaoG3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG3ActionPerformed(evt);
@@ -1131,6 +1328,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoG3);
 
+        botaoH3.setFocusPainted(false);
         botaoH3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH3ActionPerformed(evt);
@@ -1144,7 +1342,7 @@ public class Application extends javax.swing.JFrame {
         jLabel17.setText("2");
         painelTabuleiro.add(jLabel17);
 
-        botaoA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoA2.setFocusPainted(false);
         botaoA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA2ActionPerformed(evt);
@@ -1153,7 +1351,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoA2);
 
         botaoB2.setBackground(new java.awt.Color(51, 51, 51));
-        botaoB2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoB2.setFocusPainted(false);
         botaoB2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB2ActionPerformed(evt);
@@ -1161,7 +1359,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoB2);
 
-        botaoC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoC2.setFocusPainted(false);
         botaoC2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC2ActionPerformed(evt);
@@ -1170,7 +1368,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoC2);
 
         botaoD2.setBackground(new java.awt.Color(51, 51, 51));
-        botaoD2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoD2.setFocusPainted(false);
         botaoD2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD2ActionPerformed(evt);
@@ -1178,7 +1376,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoD2);
 
-        botaoE2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoE2.setFocusPainted(false);
         botaoE2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE2ActionPerformed(evt);
@@ -1187,7 +1385,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoE2);
 
         botaoF2.setBackground(new java.awt.Color(51, 51, 51));
-        botaoF2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoF2.setFocusPainted(false);
         botaoF2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF2ActionPerformed(evt);
@@ -1195,7 +1393,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoF2);
 
-        botaoG2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoG2.setFocusPainted(false);
         botaoG2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG2ActionPerformed(evt);
@@ -1204,7 +1402,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoG2);
 
         botaoH2.setBackground(new java.awt.Color(51, 51, 51));
-        botaoH2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-pawn.png"))); // NOI18N
+        botaoH2.setFocusPainted(false);
         botaoH2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH2ActionPerformed(evt);
@@ -1219,7 +1417,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(jLabel18);
 
         botaoA1.setBackground(new java.awt.Color(51, 51, 51));
-        botaoA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-rook.png"))); // NOI18N
+        botaoA1.setFocusPainted(false);
         botaoA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoA1ActionPerformed(evt);
@@ -1227,7 +1425,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoA1);
 
-        botaoB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-knight.png"))); // NOI18N
+        botaoB1.setFocusPainted(false);
         botaoB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoB1ActionPerformed(evt);
@@ -1236,7 +1434,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoB1);
 
         botaoC1.setBackground(new java.awt.Color(51, 51, 51));
-        botaoC1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-bishop.png"))); // NOI18N
+        botaoC1.setFocusPainted(false);
         botaoC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoC1ActionPerformed(evt);
@@ -1244,7 +1442,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoC1);
 
-        botaoD1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-queen.png"))); // NOI18N
+        botaoD1.setFocusPainted(false);
         botaoD1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoD1ActionPerformed(evt);
@@ -1253,7 +1451,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoD1);
 
         botaoE1.setBackground(new java.awt.Color(51, 51, 51));
-        botaoE1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-king.png"))); // NOI18N
+        botaoE1.setFocusPainted(false);
         botaoE1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoE1ActionPerformed(evt);
@@ -1261,7 +1459,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoE1);
 
-        botaoF1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-bishop.png"))); // NOI18N
+        botaoF1.setFocusPainted(false);
         botaoF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoF1ActionPerformed(evt);
@@ -1270,7 +1468,7 @@ public class Application extends javax.swing.JFrame {
         painelTabuleiro.add(botaoF1);
 
         botaoG1.setBackground(new java.awt.Color(51, 51, 51));
-        botaoG1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-knight.png"))); // NOI18N
+        botaoG1.setFocusPainted(false);
         botaoG1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoG1ActionPerformed(evt);
@@ -1278,7 +1476,7 @@ public class Application extends javax.swing.JFrame {
         });
         painelTabuleiro.add(botaoG1);
 
-        botaoH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/white-rook.png"))); // NOI18N
+        botaoH1.setFocusPainted(false);
         botaoH1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoH1ActionPerformed(evt);
@@ -1289,9 +1487,18 @@ public class Application extends javax.swing.JFrame {
         getContentPane().add(painelTabuleiro);
         painelTabuleiro.setBounds(5, 5, 700, 700);
 
+        textoTurno.setEditable(false);
+        textoTurno.setBackground(new java.awt.Color(204, 204, 204));
+        textoTurno.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        textoTurno.setForeground(new java.awt.Color(51, 51, 51));
+        textoTurno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textoTurno.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
+        getContentPane().add(textoTurno);
+        textoTurno.setBounds(90, 720, 610, 30);
+
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/img/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
-        backgroundImage.setBounds(0, 0, 800, 810);
+        backgroundImage.setBounds(0, 0, 800, 800);
 
         jMenu1.setText("Arquivo");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -1693,10 +1900,10 @@ public class Application extends javax.swing.JFrame {
 
     private void botaoCodigoFonteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCodigoFonteActionPerformed
         // TODO add your handling code here:
-        try{
+        try {
             URI link = new URI("https://github.com/gustavodornelas/xadrez-java");
             Desktop.getDesktop().browse(link);
-        }catch(Exception erro){
+        } catch (Exception erro) {
             System.out.println(erro);
         }
     }//GEN-LAST:event_botaoCodigoFonteActionPerformed
@@ -1850,5 +2057,6 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem radioCavalo;
     private javax.swing.JRadioButtonMenuItem radioRainha;
     private javax.swing.JRadioButtonMenuItem radioTorre;
+    private javax.swing.JTextField textoTurno;
     // End of variables declaration//GEN-END:variables
 }
